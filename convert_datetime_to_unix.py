@@ -11,10 +11,12 @@ for line in file:
     end_date = line.split(",")[1].replace("\n", "")
     start_date = start_date.replace("\t", "")
     end_date = end_date.replace("\t", "")
-    # element1 = datetime.datetime.strptime(line.replace("\n", ""),"%d/%m/%Y %H:%M:%S")
-    # element2 = datetime.datetime.strptime(line.replace("\n", ""),"%d/%m/%Y %H:%M:%S")
-    element1 = datetime.datetime.strptime(start_date, "%d/%m/%Y %H:%M")
-    element2 = datetime.datetime.strptime(end_date, "%d/%m/%Y %H:%M")
+    start_date = start_date+":00"
+    end_date = end_date+":00"
+    element1 = datetime.datetime.strptime(start_date, "%d/%m/%Y %H:%M:%S")
+    element2 = datetime.datetime.strptime(end_date, "%d/%m/%Y %H:%M:%S")
+    # element1 = datetime.datetime.strptime(start_date, "%d/%m/%Y %H:%M")
+    # element2 = datetime.datetime.strptime(end_date, "%d/%m/%Y %H:%M")
     tuple1 = element1.timetuple()
     tuple2 = element2.timetuple()
     timestamp1 = time.mktime(tuple1)
