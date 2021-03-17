@@ -21,7 +21,7 @@ for line in file:
     tuple2 = element2.timetuple()
     timestamp1 = time.mktime(tuple1)
     timestamp2 = time.mktime(tuple2)
-    f.write(str(int(timestamp1)) + "\t" + str(int(timestamp2)) + "\n")
+    f.write(str(int(timestamp1)) + "000\t" + str(int(timestamp2)) + "000\n")
 
 
 f.close()
